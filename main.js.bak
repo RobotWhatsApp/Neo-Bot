@@ -107,7 +107,7 @@ zeroyt7.sendMessage(m.key.remoteJid, `\`\`\`Anti Delete\`\`\`
 })
       if (!isWelkom) return
       if (anu.action == "add" && mem.includes(zeroyt7.user.jid)) {
-        zeroyt7.sendMessage(anu.jid, "Hai Aku Bot Whatsapp, saya akan membatu mempermudah kehidupan..seperti membuat sticker dan lain-lain. untuk memulai silahkan ketik !menu", "conversation")}
+        zeroyt7.sendMessage(anu.jid, "Hai Aku Bot Whatsapp, saya akan membatu mempermudah kehidupan..seperti membuat sticker dan lain-lain. untuk meulai silahkan ketik !menu.", "conversation")}
       if (anu.action == 'add' && !mem.includes(zeroyt7.user.jid)) {
              if (!isWelkom) return
                 mdata = await zeroyt7.groupMetadata(anu.jid)
@@ -117,9 +117,9 @@ zeroyt7.sendMessage(m.key.remoteJid, `\`\`\`Anti Delete\`\`\`
                 memeg = mdata.participants.length
                 let v = zeroyt7.contacts[num] || { notify: num.replace(/@.+/, '') }
                 anu_user = v.vname || v.notify || num.split('@')[0] 
-                teks = `𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠 𝐊𝐚𝐤 @${mem.split('@')[0]}*\n*𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐈𝐧 𝐆𝐫𝐮𝐩 *${groupName}*\n*𝐒𝐞𝐦𝐨𝐠𝐚 𝐁𝐞𝐭𝐚𝐡~~*`
+                teks = `Selamat Datang Kak @${mem.split('@')[0]}*\n*Welcome in group *${groupName}*\n*Semoga betah~~*`
                 buff = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome?nama=${mem.split('@')[0]}&descriminator=${time_wel}&memcount=${memeg}&gcname=${groupName}&pp=${pp_user}&bg=https://i.ibb.co/NS0zKVq/2bfd5f168031.jpg`)
-                zeroyt7.sendMessage(mdata.id, { contentText: `${teks}`, footerText: `_𝐉𝐚𝐧𝐠𝐚𝐧 𝐋𝐮𝐩𝐚 𝐁𝐚𝐜𝐚 𝐃𝐞𝐬𝐤 𝐆𝐫𝐮𝐩 𝐘𝐚_`, buttons: [{buttonId: `#rulesgroup`,buttonText:{displayText: '𝐃𝐄𝐒𝐊 𝐆𝐑𝐔𝐏'},type:1},{buttonId: `#menu`,buttonText:{displayText: '𝐌𝐄𝐍𝐔'},type:1}],headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: buff, contextInfo: {"mentionedJid": [num]}}}, 'buttonsMessage')
+                zeroyt7.sendMessage(mdata.id, { contentText: `${teks}`, footerText: `Jangan Lupa Baca Rules Group Ya`, buttons: [{buttonId: `#rulesgroup`,buttonText:{displayText: 'Rules Group'},type:1},{buttonId: `#menu`,buttonText:{displayText: 'Menu'},type:1}],headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: buff, contextInfo: {"mentionedJid": [num]}}}, 'buttonsMessage')
 		}
       if (anu.action == 'remove' && !mem.includes(zeroyt7.user.jid)) {
             if (!isWelkom) return                 
@@ -130,9 +130,9 @@ zeroyt7.sendMessage(m.key.remoteJid, `\`\`\`Anti Delete\`\`\`
                 let w = zeroyt7.contacts[num] || { notify: num.replace(/@.+/, '') }
                 anu_user = w.vname || w.notify || num.split('@')[0]
                 memeg = mdata.participants.length
-                out = `*𝐇𝐨𝐫𝐞...\n𝐒𝐞𝐩𝐞𝐫𝐭𝐢𝐧𝐲𝐚 𝐛𝐞𝐛𝐚𝐧 𝐠𝐫𝐮𝐩 𝐛𝐞𝐫𝐤𝐮𝐫𝐚𝐧𝐠 𝐬𝐚𝐭𝐮*\n*𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐓𝐢𝐧𝐠𝐠𝐚𝐥* *@${num.split('@')[0]}*\n*𝐒𝐞𝐦𝐨𝐠𝐚 𝐓𝐞𝐧𝐚𝐧𝐠 𝐃𝐢 𝐀𝐥𝐚𝐦 𝐒𝐚𝐧𝐚*`
+                out = `*Sepertinya beban grup berkurang satu*\n*Selamat Tinggal* *@${num.split('@')[0]}*\n*Semoga Tenang Di Alam Sana*`
                 buff = await getBuffer(`http://hadi-api.herokuapp.com/api/card/goodbye?nama=${mem.split('@')[0]}&descriminator=${time_wel}&memcount=${memeg}&gcname=${groupName}&pp=${pp_user}&bg=https://i.ibb.co/NS0zKVq/2bfd5f168031.jpg`)
-                zeroyt7.sendMessage(mdata.id, { contentText: `${out}`, footerText: `𝑴𝒂𝒓𝒊 𝑲𝒊𝒕𝒂 𝑫𝒐𝒂𝒌𝒂𝒏 𝑩𝒆𝒓𝒔𝒂𝒎𝒂 𝑨𝒈𝒂𝒓 𝑱𝒂𝒔𝒂𝒅𝒏𝒚𝒂 𝑻𝒆𝒏𝒂𝒏𝒈`, buttons: [{buttonId: `!bay`,buttonText:{displayText: '𝐁𝐘𝐄 𝐊𝐀𝐊'},type:1}],headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: buff, contextInfo: {"mentionedJid": [num]}}}, 'buttonsMessage')
+                zeroyt7.sendMessage(mdata.id, { contentText: `${out}`, footerText: `Mari Kita Doakan Bersama� Agar Jasadnya Tenang`, buttons: [{buttonId: `!bay`,buttonText:{displayText: 'BYE KAK'},type:1}],headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: buff, contextInfo: {"mentionedJid": [num]}}}, 'buttonsMessage')
                 }
     } catch (e) {
       console.log("Error : %s", color(e, "red"))

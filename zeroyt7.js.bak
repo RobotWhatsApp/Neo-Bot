@@ -1911,13 +1911,6 @@ break
 
 //━━━━━━━━━━━━━━━[ FITUR INFORMATION ]━━━━━━━━━━━━━━━━━//
 
-case 'kalkulator':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-				 
-var mtk = body.slice(12)
-teks = `${mtk} = ${Math_js.evaluate(mtk)}`
-reply(teks)
-break
 case 'kbbi':
 if (args.length == 0) return reply(`Nama Yg Mau Dicari Mana Tod\nContoh: ${prefix + command} kursi`)
 get_result = await fetchJson(`https://api.lolhuman.xyz/api/kbbi?apikey=${zerokey}&query=${args.join(" ")}`)
